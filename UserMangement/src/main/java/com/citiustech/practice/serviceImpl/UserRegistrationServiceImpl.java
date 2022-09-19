@@ -21,4 +21,9 @@ public class UserRegistrationServiceImpl {
 		user.setPassword(encodedPass);
 		userRepository.save(user);
 	}
+	
+	public User getUserbyEmail(String username) {
+
+		return userRepository.findByEmail(username);
+	}
 }

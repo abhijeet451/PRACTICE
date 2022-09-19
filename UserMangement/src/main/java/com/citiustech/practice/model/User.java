@@ -14,6 +14,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -28,6 +30,7 @@ public class User implements UserDetails{
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private int id;
 		private String email;
+		@JsonIgnore
 		private String password;
 		private String contact;
 		private String gender;
